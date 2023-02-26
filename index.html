@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.rezult{
+    width: 400px;
+    height: 100px;
+    border: 1px solid black;
+    
+}
+.error{
+    background-color: brown;
+}
+.yes{
+    background-color: rgb(11, 167, 63);
+}
+
+
+
+
+
+</style>
+<body>
+    <h1>тест на сколько ты хорошо знаешь  Влада Введенского !</h1>
+
+      <div class="con">
+        <div class="1vopros">
+            <div class="text">1 вопрос: как зовут Влада Введенского?</div>
+             <div class="variant1" id="da">
+               влад <input type="radio" name="www" id="vop1" > 
+             </div>
+             <div class="variant3" id="net">
+                эрик <input type="radio" name="www" id="vop2" > 
+             </div>
+             <div class="variant3" id="net1">
+                айша <input type="radio" name="www" id="vop3" > 
+             </div>
+        </div>
+        <div class="2vopros">
+            <br>
+            <div class="text">2 вопрос: на сколько кг Влад делает присед ? </div>
+            <br>
+            <select name="prised" id="prised" >
+                <option value="" selected></option>
+                <option  id="net6" value="120" >120</option>
+                <option id="net7" value="160" >160</option>
+                <option id="da6" value="190"  >190</option>
+               </select>
+        </div>
+        <div class="3vopros">
+            <br>
+            <div class="text">3 вопрос: что делает Влад в свободное время  ?</div>
+            <br>
+            <div class="qwe" id="da2">
+                <input type="checkbox" id="vr_prev">пауэрлифтинг
+                 </div>
+                 <div class="qwe" id="net2">
+                    <input type="checkbox" id="vr_prev1">работает
+                     </div>
+                     <div class="qwe" id="da3">
+                        <input type="checkbox" id="vr_prev2">посещает сайты 18+
+                         </div>
+                         <div class="qwe" id="net3">
+                            <input type="checkbox" id="vr_prev3">играет в футбол
+                             </div>
+                             <div class="qwe" id="da4">
+                                <input type="checkbox" id="vr_prev4">играет в компик
+                                 </div>
+                                 <div class="qwe" id="net4">
+                                    <input type="checkbox" id="vr_prev5">убирается в комнате 
+                                     </div>
+        </div>
+        <div class="4vopros">
+            <br>
+            <div class="text">4 вопрос: Влад за кого ? </div>
+            
+            <div class="variant3" id="da5">
+                чвк редан <input type="radio" name="qwe" id="vop1v2"> 
+              </div>
+              <div class="variant4" id="net5">
+                скинхед <input type="radio" name="qwe" id="vop2v2"> 
+              </div>
+        </div>
+        <div class="5vopros">
+            <br>
+            <div class="text">5 вопрос: Влад будущее России?</div>
+            <div class="fio" id="net8">
+                <div class="name" id="da7">
+                <input type="text" id="names">
+            </div>
+            </div>
+        </div>
+        <br>
+        <button id="btn">проверить тест</button>
+        
+        <div class="vivod">
+            <br>
+            ваши ответы:
+            <div class="rezult" id="rezult">
+                
+            </div>
+        </div>
+      </div>
+<script>
+btn.addEventListener('click', function(){
+    console.log(vop1v2.checked);
+    let gender = ' ';
+    if(vop1.checked == true){
+       gender = 'влад';
+       da.classList.add("yes");
+    }
+    if(vop2.checked == true){
+        gender = 'эрик';
+        net.classList.add("error");
+    }
+    if(vop3.checked == true){
+        gender = 'айша';
+        net1.classList.add("error");
+    }
+     let habbit ='влад занимается в свободное время:'
+     if(vr_prev.checked == false && vr_prev1.checked == false && vr_prev2.checked == false && vr_prev3.checked == false && vr_prev4.checked == false && vr_prev5.checked == false ){
+           habbit ='надо ответить вообще то '
+      }
+      if(vr_prev.checked == true){
+                habbit += 'пауэрлифтинг '
+                da2.classList.add("yes");
+     }
+     if(vr_prev1.checked == true){
+                habbit += 'работает '
+                net2.classList.add("error");
+     }
+     if(vr_prev2.checked == true){
+                habbit += 'посещает сайты 18+ '
+                da3.classList.add("yes");
+     }
+     if(vr_prev3.checked == true){
+                habbit += 'играет в футбол '
+                net3.classList.add("error");
+     }
+     if(vr_prev4.checked == true){
+                habbit += 'играет в компик '
+                da4.classList.add("yes");
+     }
+     if(vr_prev5.checked == true){
+                habbit += 'убирается в комнате '
+                net4.classList.add("error");
+     }
+
+    let chevk = ' '
+    if(vop1v2.checked == true){
+        chevk = 'влад за чвк редан';
+        da5.classList.add("yes");
+    }
+    if(vop2v2.checked == true){
+        chevk = 'влад и есть скинхед';
+        net5.classList.add("error");
+        
+    }
+    if(prised.value == "120"){
+        net6.classList.add("error");
+    }
+    if(prised.value == "160"){
+        net7.classList.add("error");
+    } 
+    if(prised.value == "190"){
+        da6.classList.add("yes");
+    }
+
+
+
+    if( names.value == 'да'){
+        da7.classList.add("yes");
+    }
+    if( names.value == 'нет'){
+        net8.classList.add("error");
+    }
+
+rezult.innerHTML = gender + ' , ' + prised.value + ' , ' +  habbit + ' , ' + chevk + ' , ' + names.value ;
+});
+</script>
+</body>
+</html>
